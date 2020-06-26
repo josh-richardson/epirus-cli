@@ -29,7 +29,8 @@ public interface DockerOperations {
                         .start()
                         .waitFor();
         if (exitCode != 0) {
-            printErrorAndExit("Could not build project.");
+            printErrorAndExit(
+                    "Could not build project. If you haven't yet executed `epirus docker build`, please do this before attempting to run the image.");
         }
     }
 }
